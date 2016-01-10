@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ru.nekit.android.androiddatabinding.MainActivity">
+    tools:context=".MainActivity">
 
-    <RelativeLayout
+    <data>
+
+        <variable
+            name="simpleDataObject"
+            type="ru.nekit.android.androiddatabinding.dataObject.SimpleDataObject" />
+
+        <variable
+            name="observableDataObject"
+            type="ru.nekit.android.androiddatabinding.dataObject.ObservableDataObject" />
+
+        <variable
+            name="clickHandler"
+            type="ru.nekit.android.androiddatabinding.dataObject.ClickHandler" />
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/staticTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello World!" />
-    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/simpleDataObjectTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{simpleDataObject.value}" />
+
+        <Button
+            android:id="@+id/updateSimpleDataObject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickHandler.onClickSimpleDataObjectUpdate}"
+            android:text="@string/update_simple_data_object" />
+
+        <TextView
+            android:id="@+id/observableDataObjectTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/update_observable_data_object_format(observableDataObject.value, observableDataObject.valueSecondType)}" />
+
+        <Button
+            android:id="@+id/updateObservableDataObject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickHandler.onClickObservableDataObjectUpdate}"
+            android:text="@string/update_observable_data_object" />
+
+    </LinearLayout>
 </layout>
