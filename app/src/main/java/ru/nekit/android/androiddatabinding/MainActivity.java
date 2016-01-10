@@ -35,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 mActivityDataBinding.setSimpleDataObject(mSimpleDataObject);
             }
         };
-        mClickHandler.onClickObservableDataObjectUpdate = new View.OnClickListener() {
+        mActivityDataBinding.setOnClickObservableDataObjectUpdate(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //update observable data object
                 mObservableDataObject.setValue("Data example updated");
                 mObservableDataObject.setValueSecondType("Data type 2 example updated");
             }
-        };
+        });
         mActivityDataBinding.setSimpleDataObject(mSimpleDataObject);
         mActivityDataBinding.setObservableDataObject(mObservableDataObject);
         mActivityDataBinding.setClickHandler(mClickHandler);

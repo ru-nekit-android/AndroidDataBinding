@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View.OnClickListener" />
+
         <variable
             name="simpleDataObject"
             type="ru.nekit.android.androiddatabinding.dataObject.SimpleDataObject" />
@@ -16,6 +18,10 @@
         <variable
             name="clickHandler"
             type="ru.nekit.android.androiddatabinding.dataObject.ClickHandler" />
+
+        <variable
+            name="onClickObservableDataObjectUpdate"
+            type="android.view.View.OnClickListener" />
 
     </data>
 
@@ -57,7 +63,7 @@
             android:id="@+id/updateObservableDataObject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{clickHandler.onClickObservableDataObjectUpdate}"
+            android:onClick="@{onClickObservableDataObjectUpdate}"
             android:text="@string/update_observable_data_object" />
 
     </LinearLayout>

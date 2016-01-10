@@ -12,6 +12,4 @@ public class ClickHandler {
     @NotNull
     public View.OnClickListener onClickSimpleDataObjectUpdate;
 
-    @NotNull
-    public View.OnClickListener onClickObservableDataObjectUpdate;
 }
